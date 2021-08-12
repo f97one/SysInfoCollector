@@ -2,13 +2,20 @@ name: Android CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, develop ]
+    paths-ignore:
+      - docs/**
+      - README.md
+      - LICENSE
   pull_request:
-    branches: [ main ]
+    branches: [ develop ]
+    paths-ignore:
+      - docs/**
+      - README.md
+      - LICENSE
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -21,5 +28,43 @@ jobs:
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-    - name: Build with Gradle
-      run: ./gradlew build
+
+    - name: Check Android dependencies of the project
+      run: ./gradlew androidDependencies
+
+    - name: Assemble with debug
+      run: ./gradlew assembleDebug
+
+    - name: JVM unit test
+      run: ./gradlew test --stacktrace
+
+    - name: Upload test artifacts and results
+      uses: actions/upload-artifact@v2
+      if: success() || failure()
+      with:
+        name: results
+        path: |
+          **/build/reports/tests/**/*
+          **/build/reports/test-results/**/*
+          **/build/reports/jacoco/**/*
+        if-no-files-found: warn
+        retention-days: 14
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run static code inspection
+        run: ./gradlew lint
+
+      - name: Upload results Artifact
+        uses: actions/upload-artifact@v2
+        if: success() || failure()
+        with:
+          name: results
+          path: |
+            **/build/reports/lint-results.html
+            **/build/reports/lint-results.xml
+          if-no-files-found: error
+          retention-days: 14
