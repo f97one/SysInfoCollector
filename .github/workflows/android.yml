@@ -35,8 +35,8 @@ jobs:
     - name: Assemble with debug
       run: ./gradlew assembleDebug
 
-    - name: JVM unit test
-      run: ./gradlew test --stacktrace
+    - name: unit test with debug coverage report
+      run: ./gradlew test createDebugCoverageReport --stacktrace
 
     - name: Upload test artifacts and results
       uses: actions/upload-artifact@v2
@@ -45,8 +45,8 @@ jobs:
         name: results
         path: |
           **/build/reports/tests/**/*
-          **/build/reports/test-results/**/*
-          **/build/reports/jacoco/**/*
+          **/build/reports/androidTest/**/*
+          **/build/reports/coverage/**/*
         if-no-files-found: warn
         retention-days: 14
 
