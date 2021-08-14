@@ -93,4 +93,8 @@ dependencies {
     androidTestImplementation("com.google.truth:truth:${truthVersion}")
     testImplementation("androidx.test.ext:truth:${droidXTruthVersion}")
     androidTestImplementation("androidx.test.ext:truth:${droidXTruthVersion}")
+
+    // Apache Commons Codec
+    def commonsCodecVersion = "1.15"
+    implementation("commons-codec:commons-codec:$commonsCodecVersion")
 }
