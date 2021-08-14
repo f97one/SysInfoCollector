@@ -60,7 +60,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     // XML processing
-    def tikXmlVersion = '0.8.15'
+    def tikXmlVersion = '0.8.13'
     implementation "com.tickaroo.tikxml:annotation:$tikXmlVersion"
     implementation "com.tickaroo.tikxml:core:$tikXmlVersion"
     implementation "com.tickaroo.tikxml:retrofit-converter:$tikXmlVersion"
