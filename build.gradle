@@ -10,9 +10,23 @@ buildscript {
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+        classpath "com.google.android.gms:oss-licenses-plugin:0.10.4"
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+// jacoco.toolVersion が内部的にちゃんと評価されていないようなので、強制的にバージョンをセット
+subprojects {
+    configurations.all {
+        resolutionStrategy {
+            eachDependency { details ->
+                if ('org.jacoco' == details.requested.group) {
+                    details.useVersion "0.8.7"
+                }
+            }
+        }
+    }
 }
