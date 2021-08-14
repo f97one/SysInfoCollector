@@ -33,7 +33,7 @@ data class InventoryAccessLog(
 data class InventoryStorage(
     @Element(name = "DESCRIPTION")
     var description: String = "",
-    @Element(name = "DISKSIZE")
+    @PropertyElement(name = "DISKSIZE")
     var diskSize: Long = 0L,
     @Element(name = "NAME")
     var name: String = "",
