@@ -48,7 +48,7 @@ jobs:
         name: test-results
         path: |
           **/build/reports/tests/**/*
-          **/build/reports/androidTest/**/*
+          **/build/reports/androidTests/**/*
           **/build/reports/coverage/**/*
         if-no-files-found: warn
         retention-days: 14
