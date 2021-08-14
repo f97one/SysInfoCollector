@@ -16,7 +16,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -36,13 +36,16 @@ jobs:
       run: ./gradlew assembleDebug
 
     - name: unit test with debug coverage report
-      run: ./gradlew test createDebugCoverageReport --stacktrace
+      uses: reactivecircus/android-emulator-runner@v2
+      with:
+        api-level: 23
+        script: ./gradlew test createDebugCoverageReport --stacktrace
 
     - name: Upload test artifacts and results
       uses: actions/upload-artifact@v2
       if: success() || failure()
       with:
-        name: results
+        name: test-results
         path: |
           **/build/reports/tests/**/*
           **/build/reports/androidTest/**/*
@@ -62,9 +65,9 @@ jobs:
         uses: actions/upload-artifact@v2
         if: success() || failure()
         with:
-          name: results
+          name: lint-results
           path: |
-            **/build/reports/lint-results.html
-            **/build/reports/lint-results.xml
+            **/build/reports/lint-results*.html
+            **/build/reports/lint-results*.xml
           if-no-files-found: error
           retention-days: 14
