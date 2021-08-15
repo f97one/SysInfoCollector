@@ -13,7 +13,7 @@ class StdDateTimeConverter: TypeConverter<Date> {
 
     override fun read(value: String?): Date {
         val df: DateFormat = SimpleDateFormat(dateFormat, Locale.getDefault())
-        return df.parse(value!!)
+        return df.parse(value!!)!!
     }
 
     override fun write(value: Date?): String {
