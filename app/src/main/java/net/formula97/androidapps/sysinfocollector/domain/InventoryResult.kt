@@ -253,7 +253,7 @@ data class InventoryResult(
          * IP address
          */
         @PropertyElement(name = "IPADDR", writeAsCData = true)
-        var IP_ADDR: String = "0.0.0.0",
+        var ipAddr: String = "0.0.0.0",
         /**
          * Workgroup name
          */
@@ -302,7 +302,7 @@ data class InventoryResult(
          * Default gateway
          */
         @PropertyElement(name = "DEFAULTGATEWAY", writeAsCData = true)
-        var DEFAULT_GATEWAY: String? = null,
+        var defaultGateway: String? = null,
         /**
          * virtualization technology
          */
