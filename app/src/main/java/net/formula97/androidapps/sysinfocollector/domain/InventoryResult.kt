@@ -58,6 +58,12 @@ data class InventoryResult(
         @Element
         var inputs: List<Input> = listOf(),
         @Element
+        var licenseInfos: List<LicenseInfo> = listOf(),
+        @Element
+        var localGroups: List<LocalGroup> = listOf(),
+        @Element
+        var loginUsers: List<LocalUser> = listOf(),
+        @Element
         var storages: List<Storage> = listOf()
     ) {}
 
@@ -767,9 +773,127 @@ data class InventoryResult(
         @PropertyElement(name = "LAYOUT", writeAsCData = true)
         var layout: String? = null,
         @PropertyElement(name = "POINTINGTYPE", writeAsCData = true)
-        var pointingType: String? = null,
+        var pointingType: Int? = null,
         @PropertyElement(name = "TYPE", writeAsCData = true)
         var type: String? = null
+    ) {}
+
+    @Xml(name = "LOCAL_GROUPS")
+    data class LocalGroup(
+        @PropertyElement(name = "ID", writeAsCData = true)
+        var id: String? = null,
+        @PropertyElement(name = "NAME", writeAsCData = true)
+        var name: String? = null,
+        @Element(name = "MEMBER")
+        var member: List<String>? = null
+    ) {}
+
+    @Xml(name = "LOCAL_USERS")
+    data class LocalUser(
+        /**
+         * uid
+         */
+        @PropertyElement(name = "ID", writeAsCData = true)
+        var id: String = "",
+        /**
+         * display name of user
+         */
+        @PropertyElement(name = "NAME", writeAsCData = true)
+        var name: String = "",
+        /**
+         * login user id
+         */
+        @PropertyElement(name = "LOGIN", writeAsCData = true)
+        var login: String? = null,
+        /**
+         * home directory of user
+         */
+        @PropertyElement(name = "HOME", writeAsCData = true)
+        var home: String? = null,
+        /**
+         * login shell of user
+         */
+        @PropertyElement(name = "SHELL", writeAsCData = true)
+        var shell: String? = null,
+    ) {}
+
+    /**
+     * LVM logical volume
+     */
+    @Xml(name = "LOGICAL_VOLUMES")
+    data class LogicalVolume(
+        /**
+         * name of logical volume
+         */
+        @PropertyElement(name = "LV_NAME", writeAsCData = true)
+        var lvName: String? = null,
+        /**
+         * name of volume group
+         */
+        @PropertyElement(name = "VG_NAME", writeAsCData = true)
+        var vgName: String? = null,
+        /**
+         * attribute
+         */
+        @PropertyElement(name = "ATTR", writeAsCData = true)
+        var attr: String? = null,
+        /**
+         * size, in MB
+         */
+        @PropertyElement(name = "SIZE", writeAsCData = true)
+        var size: Long = 0,
+        /**
+         * UUID
+         */
+        @PropertyElement(name = "LV_UUID", writeAsCData = true, converter = UuidConverter::class)
+        var lvUuid: UUID? = null,
+        @PropertyElement(name = "SEG_COUNT", writeAsCData = true)
+        var SEG_COUNT: String? = null,
+        /**
+         * volume group UUID
+         */
+        @PropertyElement(name = "VG_UUID", writeAsCData = true, converter = UuidConverter::class)
+        var vgUuid: UUID? = null
+    ) {}
+
+    /**
+     * License information
+     */
+    @Xml(name = "LICENSEINFOS")
+    data class LicenseInfo(
+        /**
+         * name
+         */
+        @PropertyElement(name = "NAME", writeAsCData = true)
+        var name: String = "",
+        /**
+         * full name
+         */
+        @PropertyElement(name = "FULLNAME", writeAsCData = true)
+        var FULL_NAME: String? = null,
+        /**
+         * registration key
+         */
+        @PropertyElement(name = "KEY", writeAsCData = true)
+        var key: String? = null,
+        /**
+         * components covered
+         */
+        @PropertyElement(name = "COMPONENTS", writeAsCData = true)
+        var components: String? = null,
+        @PropertyElement(name = "TRIAL", writeAsCData = true)
+        var trial: String? = null,
+        @PropertyElement(name = "UPDATE", writeAsCData = true)
+        var update: String? = null,
+        @PropertyElement(name = "OEM", writeAsCData = true, converter = BoolToIntConverter::class)
+        var oem: Boolean = false,
+        @PropertyElement(name = "ACTIVATION_DATE", writeAsCData = true, converter = StdDateConverter::class)
+        var activationDate: Date? = null,
+        /**
+         * installation ID
+         */
+        @PropertyElement(name = "PRODUCTID", writeAsCData = true)
+        var productId: String? = null
     ) {}
 
     @Xml(name = "STORAGES")
