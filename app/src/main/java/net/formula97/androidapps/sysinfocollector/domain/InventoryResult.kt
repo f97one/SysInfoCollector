@@ -64,7 +64,9 @@ data class InventoryResult(
         @Element
         var loginUsers: List<LocalUser> = listOf(),
         @Element
-        var memories: List<Memory> = listOf(),
+        var firmwares: List<Firmware> = listOf(),
+        @Element
+        var monitors: List<Monitor> = listOf(),
         @Element
         var storages: List<Storage> = listOf()
     ) {}
@@ -859,6 +861,86 @@ data class InventoryResult(
     ) {}
 
     /**
+     * firmware component
+     */
+    @Xml(name = "FIRMWARES")
+    data class Firmware(
+        /**
+         * component name using the firmware
+         */
+        @PropertyElement(name = "NAME", writeAsCData = true)
+        var name: String = "",
+        /**
+         * firmware description if available
+         */
+        @PropertyElement(name = "DESCRIPTION", writeAsCData = true)
+        var description: String? = null,
+        /**
+         * short description of firmware type: modem, bios, ...
+         */
+        @PropertyElement(name = "TYPE", writeAsCData = true)
+        var type: String? = null,
+        /**
+         * full firmware version
+         */
+        @PropertyElement(name = "VERSION", writeAsCData = true)
+        var version: String? = null,
+        /**
+         * firmware date
+         */
+        @PropertyElement(name = "DATE", writeAsCData = true, converter = StdDateConverter::class)
+        var date: Date? = null,
+        /**
+         * firmware manufacturer
+         */
+        @PropertyElement(name = "MANUFACTURER", writeAsCData = true)
+        var manufacturer: String? = null
+        ) {}
+
+    @Xml(name = "MONITORS")
+    data class Monitor(
+        // todo uuencodeではなくbase64として評価するconverterを書く
+        /**
+         * base64-encoded EDID frame
+         */
+        @PropertyElement(name = "BASE64", writeAsCData = true)
+        var base64: String = "",
+        @PropertyElement(name = "CAPTION", writeAsCData = true)
+        var caption: String? = null,
+        @PropertyElement(name = "DESCRIPTION", writeAsCData = true)
+        var description: String? = null,
+        /**
+         * monitor manufacturer
+         */
+        @PropertyElement(name = "MANUFACTURER", writeAsCData = true)
+        var manufacturer: String? = null,
+        /**
+         * monitor serial number
+         */
+        @PropertyElement(name = "SERIAL", writeAsCData = true)
+        var serial: String? = null,
+        /**
+         * alternative monitor serial number computed from known manufacturer formula and if different from SERIAL
+         */
+        @PropertyElement(name = "ALTSERIAL", writeAsCData = true)
+        var altSerial: String? = null,
+        /**
+         * Used port to connect the device
+         */
+        @PropertyElement(name = "PORT", writeAsCData = true)
+        var port: String? = null,
+        /**
+         * uuencoded EDID frame
+         */
+        @PropertyElement(name = "UUENCODE", writeAsCData = true)
+        var uuencode: String? = null,
+        @PropertyElement(name = "NAME", writeAsCData = true)
+        var name: String? = null,
+        @PropertyElement(name = "TYPE", writeAsCData = true)
+        var type: String? = null
+    ) {}
+
+    /**
      * License information
      */
     @Xml(name = "LICENSEINFOS")
@@ -955,6 +1037,6 @@ data class InventoryResult(
         @Element(name = "NAME")
         var name: String = "",
         @Element(name = "TYPE")
-        var type: String = ""
+        var type: String = "",
     ) {}
 }
