@@ -64,6 +64,8 @@ data class InventoryResult(
         @Element
         var loginUsers: List<LocalUser> = listOf(),
         @Element
+        var memories: List<Memory> = listOf(),
+        @Element
         var firmwares: List<Firmware> = listOf(),
         @Element
         var monitors: List<Monitor> = listOf(),
