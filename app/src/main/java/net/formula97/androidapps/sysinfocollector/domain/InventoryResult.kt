@@ -75,6 +75,10 @@ data class InventoryResult(
         @Element
         var modems: List<Modem> = listOf(),
         @Element
-        var networks: List<Network> = listOf()
+        var networks: List<Network> = listOf(),
+        @Element
+        var physicalVolumes: List<PhysicalVolume> = listOf(),
+        @Element
+        var ports: List<Port> = listOf(),
     )
 }
