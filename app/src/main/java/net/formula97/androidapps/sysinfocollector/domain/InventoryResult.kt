@@ -89,5 +89,7 @@ data class InventoryResult(
         var registry: Registry? = null,
         @Element
         var rudder: Rudder? = null,
+        @Element
+        var slots: List<Slot> = listOf(),
     )
 }

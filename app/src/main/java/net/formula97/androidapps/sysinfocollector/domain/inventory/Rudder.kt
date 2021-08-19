@@ -17,4 +17,4 @@ data class Rudder(
     var serverRoles: String? = null,
     @PropertyElement(name = "AGENT_CAPABILITIES", writeAsCData = true)
     var agentCapabilities: String? = null
-)
+): InventoryCategory
