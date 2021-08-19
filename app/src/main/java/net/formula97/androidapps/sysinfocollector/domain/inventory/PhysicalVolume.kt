@@ -43,4 +43,4 @@ data class PhysicalVolume(
     var peSize: Double? = null,
     @PropertyElement(name = "VG_UUID", writeAsCData = true)
     var vgUuid: UUID? = null
-)
+): InventoryCategory

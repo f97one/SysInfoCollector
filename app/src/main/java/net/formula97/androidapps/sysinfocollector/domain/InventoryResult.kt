@@ -80,5 +80,7 @@ data class InventoryResult(
         var physicalVolumes: List<PhysicalVolume> = listOf(),
         @Element
         var ports: List<Port> = listOf(),
+        @Element
+        var printers: List<Printer> = listOf(),
     )
 }

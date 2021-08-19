@@ -13,4 +13,4 @@ data class Port(
     var name: String? = null,
     @PropertyElement(name = "TYPE", writeAsCData = true)
     var type: String? = null
-)
+): InventoryCategory

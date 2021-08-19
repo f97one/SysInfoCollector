@@ -143,4 +143,4 @@ data class Network(
      */
     @PropertyElement(name = "WIFI_VERSION", writeAsCData = true)
     var wifiVersion: String? = null
-)
+): InventoryCategory
