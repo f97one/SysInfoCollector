@@ -4,9 +4,6 @@ import com.tickaroo.tikxml.annotation.Element
 import com.tickaroo.tikxml.annotation.PropertyElement
 import com.tickaroo.tikxml.annotation.Xml
 import net.formula97.androidapps.sysinfocollector.domain.inventory.*
-import net.formula97.androidapps.sysinfocollector.logic.converter.*
-import java.lang.Process
-import java.util.*
 
 @Xml(name = "REQUEST")
 data class InventoryResult(
