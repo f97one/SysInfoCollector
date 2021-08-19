@@ -71,6 +71,8 @@ data class InventoryResult(
         @Element
         var monitors: List<Monitor> = listOf(),
         @Element
-        var storages: List<Storage> = listOf()
+        var storages: List<Storage> = listOf(),
+        @Element
+        var modems: List<Modem> = listOf(),
     )
 }
