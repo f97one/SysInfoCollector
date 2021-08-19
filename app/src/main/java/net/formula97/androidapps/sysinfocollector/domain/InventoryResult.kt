@@ -91,5 +91,7 @@ data class InventoryResult(
         var rudder: Rudder? = null,
         @Element
         var slots: List<Slot> = listOf(),
+        @Element
+        var softwares: List<Software> = listOf()
     )
 }
