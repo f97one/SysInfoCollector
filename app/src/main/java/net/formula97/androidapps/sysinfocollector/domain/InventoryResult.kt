@@ -92,6 +92,8 @@ data class InventoryResult(
         @Element
         var slots: List<Slot> = listOf(),
         @Element
-        var softwares: List<Software> = listOf()
+        var softwares: List<Software> = listOf(),
+        @Element
+        var sounds: List<Sound> = listOf(),
     )
 }
