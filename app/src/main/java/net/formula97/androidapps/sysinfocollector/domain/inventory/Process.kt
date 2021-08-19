@@ -38,4 +38,4 @@ data class Process(
      */
     @PropertyElement(name = "CMD", writeAsCData = true)
     var cmd: String? = null
-)
+): InventoryCategory

@@ -85,5 +85,7 @@ data class InventoryResult(
         var printers: List<Printer> = listOf(),
         @Element
         var processes: List<Process> = listOf(),
+        @Element
+        var registry: Registry? = null,
     )
 }
