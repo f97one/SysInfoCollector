@@ -87,5 +87,7 @@ data class InventoryResult(
         var processes: List<Process> = listOf(),
         @Element
         var registry: Registry? = null,
+        @Element
+        var rudder: Rudder? = null,
     )
 }
