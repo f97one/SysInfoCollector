@@ -21,7 +21,7 @@ class CpuArchConverterTest {
     fun throwsNPEIfArgIsNullWhenRead() {
         try {
             val actual = CpuArchConverter().read(null)
-            fail("No exception was thrown")
+            fail("No exception was thrown, returned $actual")
         } catch (e: Exception) {
             assertTrue(e is NullPointerException)
         }
@@ -31,6 +31,7 @@ class CpuArchConverterTest {
     fun throwsNPEIfArgIsNullWhenWrite() {
         try {
             val actual = CpuArchConverter().write(null)
+            fail("No exception was thrown, returned $actual")
         } catch (e: Exception) {
             assertTrue(e is NullPointerException)
         }
