@@ -96,5 +96,7 @@ data class InventoryResult(
         var videos: List<Video> = listOf(),
         @Element
         var usbDevices: List<UsbDevice> = listOf(),
+        @Element
+        var users: List<User> = listOf(),
     )
 }
