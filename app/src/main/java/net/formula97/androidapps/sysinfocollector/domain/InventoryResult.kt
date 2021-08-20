@@ -108,5 +108,7 @@ data class InventoryResult(
         var simCards: List<SimCard> = listOf(),
         @Element
         var sensors: List<Sensor> = listOf(),
+        @Element
+        var powerSupplies: List<PowerSupply> = listOf(),
     )
 }
