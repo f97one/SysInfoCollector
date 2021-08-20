@@ -106,5 +106,7 @@ data class InventoryResult(
         var remoteMgmt: List<RemoteMgmt> = listOf(),
         @Element
         var simCards: List<SimCard> = listOf(),
+        @Element
+        var sensors: List<Sensor> = listOf(),
     )
 }
