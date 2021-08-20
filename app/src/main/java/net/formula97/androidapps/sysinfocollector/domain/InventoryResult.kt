@@ -104,5 +104,7 @@ data class InventoryResult(
         var volumeGroups: List<VolumeGroup> = listOf(),
         @Element
         var remoteMgmt: List<RemoteMgmt> = listOf(),
+        @Element
+        var simCards: List<SimCard> = listOf(),
     )
 }
