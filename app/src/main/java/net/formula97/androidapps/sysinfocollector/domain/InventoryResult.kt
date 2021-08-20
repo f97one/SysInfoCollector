@@ -102,5 +102,7 @@ data class InventoryResult(
         var virtualMachines: List<VirtualMachine> = listOf(),
         @Element
         var volumeGroups: List<VolumeGroup> = listOf(),
+        @Element
+        var remoteMgmt: List<RemoteMgmt> = listOf(),
     )
 }
