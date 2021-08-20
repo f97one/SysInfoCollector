@@ -98,5 +98,7 @@ data class InventoryResult(
         var usbDevices: List<UsbDevice> = listOf(),
         @Element
         var users: List<User> = listOf(),
+        @Element
+        var virtualMachines: List<VirtualMachine> = listOf(),
     )
 }
