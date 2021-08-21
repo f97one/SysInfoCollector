@@ -9,4 +9,70 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string-array name="camera_vendors">
+        <item>ov|OmniVision</item>
+        <item>imx|Sony</item>
+        <item>isx|Sony</item>
+        <item>s5k|Samsung</item>
+        <item>s5c|Samsung</item>
+        <item>gc|GalaxyCore</item>
+        <item>sp|SuperPix</item>
+        <item>hi|Hynix</item>
+        <item>hm|Himax</item>
+        <item>siv|Seti</item>
+        <item>t4k|Toshiba</item>
+        <item>mn|Panasonic</item>
+        <item>jx|SiliconOptronics</item>
+        <item>ar|OnSemi</item>
+        <item>sr|Siliconfile</item>
+        <item>m|Fujitsu</item>
+    </string-array>
+    <string-array name="cpu_family">
+        <item>0x41|0xc05|Cortex-A5</item>
+        <item>0x41|0xc07|Cortex-A7</item>
+        <item>0x41|0xc08|Cortex-A8</item>
+        <item>0x41|0xc09|Cortex-A9</item>
+        <item>0x41|0xc0d|Cortex-A12</item>
+        <item>0x41|0xc0e|Cortex-A17</item>
+        <item>0x41|0xc0f|Cortex-A15</item>
+        <item>0x41|0xd01|Cortex-A32</item>
+        <item>0x41|0xd01|Cortex-A32</item>
+        <item>0x41|0xd03|Cortex-A53</item>
+        <item>0x41|0xd04|Cortex-A35</item>
+        <item>0x41|0xd05|Cortex-A55</item>
+        <item>0x41|0xd07|Cortex-A57</item>
+        <item>0x41|0xd08|Cortex-A72</item>
+        <item>0x41|0xd09|Cortex-A73</item>
+        <item>0x4e|0x0|Denver</item>
+        <item>0x51|0xf|Scorpion</item>
+        <item>0x51|0x2d|Scorpion</item>
+        <item>0x51|0x4d|Krait</item>
+        <item>0x51|0x6f|Krait</item>
+        <item>0x51|0x201|Kryo</item>
+        <item>0x51|0x205|Kryo</item>
+        <item>0x51|0x211|Kryo</item>
+        <item>0x51|0x800|Kryo-2xx</item>
+        <item>0x51|0x801|Kryo-2xx</item>
+        <item>0x51|0x802|Kryo-3xx</item>
+        <item>0x51|0x803|Kryo-3xx</item>
+        <item>0x53|0x1|Mongoose</item>
+        <item>0x53|0x2|Mongoose-M3</item>
+        <item>0x69|0x1|Intel</item>
+    </string-array>
+    <string-array name="cpu_manufacturer">
+        <item>mt|Mediatek</item>
+        <item>mediatek|MediaTek</item>
+        <item>rk|Rockchip</item>
+        <item>qcom|Qualcomm</item>
+        <item>msm|Qualcomm</item>
+        <item>apq|Qualcomm</item>
+        <item>sc|Spreadtrum</item>
+        <item>exynos|Samsung</item>
+        <item>smdk|Samsung</item>
+        <item>samsung|Samsung</item>
+        <item>hi|HiSilicon</item>
+        <item>pxa|Marvell</item>
+        <item>amlogic|Amlogic</item>
+    </string-array>
 </resources>
