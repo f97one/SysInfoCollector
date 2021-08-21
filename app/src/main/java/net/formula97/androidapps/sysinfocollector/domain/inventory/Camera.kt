@@ -1,8 +1,9 @@
-package net.formula97.androidapps.sysinfocollector.logic.converter
+package net.formula97.androidapps.sysinfocollector.domain.inventory
 
 import com.tickaroo.tikxml.annotation.Element
 import com.tickaroo.tikxml.annotation.PropertyElement
 import com.tickaroo.tikxml.annotation.Xml
+import net.formula97.androidapps.sysinfocollector.logic.converter.BoolToIntConverter
 
 @Xml(name = "CAMERAS")
 data class Camera(

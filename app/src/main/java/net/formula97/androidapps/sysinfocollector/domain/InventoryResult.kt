@@ -4,7 +4,7 @@ import com.tickaroo.tikxml.annotation.Element
 import com.tickaroo.tikxml.annotation.PropertyElement
 import com.tickaroo.tikxml.annotation.Xml
 import net.formula97.androidapps.sysinfocollector.domain.inventory.*
-import net.formula97.androidapps.sysinfocollector.logic.converter.Camera
+import net.formula97.androidapps.sysinfocollector.domain.inventory.Camera
 
 @Xml(name = "REQUEST")
 data class InventoryResult(
