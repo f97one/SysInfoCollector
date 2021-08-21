@@ -61,7 +61,7 @@
         <item>0x69|0x1|Intel</item>
     </string-array>
     <string-array name="cpu_manufacturer">
-        <item>mt|Mediatek</item>
+        <item>mt|MediaTek</item>
         <item>mediatek|MediaTek</item>
         <item>rk|Rockchip</item>
         <item>qcom|Qualcomm</item>
