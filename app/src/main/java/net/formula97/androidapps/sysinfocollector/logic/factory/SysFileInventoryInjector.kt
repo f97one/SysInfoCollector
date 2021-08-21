@@ -1,4 +1,6 @@
-package net.formula97.androidapps.sysinfocollector.domain.inventory
+package net.formula97.androidapps.sysinfocollector.logic.factory
+
+import net.formula97.androidapps.sysinfocollector.domain.inventory.InventoryCategory
 
 /**
  * Interface that defines the process of injecting inventory from system file.
