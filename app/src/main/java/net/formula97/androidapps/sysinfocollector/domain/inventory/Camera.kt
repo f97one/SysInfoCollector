@@ -62,4 +62,4 @@ data class Camera(
      */
     @Element(name = "SUPPORTS")
     var supports: List<String> = listOf()
-)
+): InventoryCategory
