@@ -37,7 +37,6 @@
         <item>0x41|0xc0e|Cortex-A17</item>
         <item>0x41|0xc0f|Cortex-A15</item>
         <item>0x41|0xd01|Cortex-A32</item>
-        <item>0x41|0xd01|Cortex-A32</item>
         <item>0x41|0xd03|Cortex-A53</item>
         <item>0x41|0xd04|Cortex-A35</item>
         <item>0x41|0xd05|Cortex-A55</item>
