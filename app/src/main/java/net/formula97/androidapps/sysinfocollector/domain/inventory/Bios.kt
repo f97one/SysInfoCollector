@@ -25,7 +25,7 @@ data class Bios(
      * BIOS release date
      */
     @PropertyElement(name = "BDATE", writeAsCData = true)
-    var bDate: Date = Date(),
+    var bDate: Date? = null,
     /**
      * BIOS version
      */
