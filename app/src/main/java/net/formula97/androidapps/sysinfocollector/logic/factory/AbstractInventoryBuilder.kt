@@ -3,9 +3,11 @@ package net.formula97.androidapps.sysinfocollector.logic.factory
 import android.content.Context
 import net.formula97.androidapps.sysinfocollector.R
 import net.formula97.androidapps.sysinfocollector.domain.CpuFamily
-import java.io.File
+import timber.log.Timber
+import java.io.*
 import java.nio.charset.Charset
 import java.nio.charset.StandardCharsets
+import java.util.*
 
 abstract class AbstractInventoryBuilder<T> {
 
@@ -51,5 +53,37 @@ abstract class AbstractInventoryBuilder<T> {
 
     fun readLinesFromFile(path: String, charset: Charset = StandardCharsets.UTF_8): String {
         return File(path).readText(charset)
+    }
+
+    fun readDeviceProps(): List<Pair<String, String>> {
+        val proc = Runtime.getRuntime().exec("getprop")
+
+        val ret = mutableListOf<Pair<String, String>>()
+        try {
+            BufferedReader(InputStreamReader(proc.inputStream)).use {
+                it.readLines().forEach { l ->
+                    val tokens = l.split(":", ignoreCase = true, limit = 0)
+                    if (tokens.size > 2) {
+                        ret.add(Pair(removeBracket(tokens[0]).trim(), removeBracket(tokens[1]).trim()))
+                    }
+                }
+            }
+        } catch (e: IOException) {
+            Timber.e(e)
+        }
+
+        return ret
+    }
+
+    fun readSystemProperty(propName: String): String? {
+        return try {
+            readDeviceProps().filter { it.first == propName }.map { it.second }.first()
+        } catch (e: Exception) {
+            null
+        }
+    }
+
+    private fun removeBracket(token: String): String {
+        return token.replace("\\[", "").replace("]", "")
     }
 }
