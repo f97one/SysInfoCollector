@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SysInfoCollector</string>
+    <string name="category_accessibility">アクセシビリティ</string>
+    <string name="category_audio">オーディオ</string>
+    <string name="category_game">ゲーム</string>
+    <string name="category_image">イメージ</string>
+    <string name="category_maps">地図</string>
+    <string name="category_news">ニュース</string>
+    <string name="category_productivity">生産性向上</string>
+    <string name="category_social">ソーシャル</string>
+    <string name="category_undefined">その他</string>
+</resources>
