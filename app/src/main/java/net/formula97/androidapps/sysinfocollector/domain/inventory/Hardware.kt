@@ -18,13 +18,13 @@ data class Hardware(
      */
     @Deprecated("")
     @PropertyElement(name = "USERID", writeAsCData = true)
-    var userId: String = "",
+    var userId: String? = null,
     /**
      * operating system version number
      */
     @Deprecated("Use InventoryResult.OperatingSystem#version and InventoryResult.OperatingSystem#kernelVersion instead")
     @PropertyElement(name = "OSVERSION", writeAsCData = true)
-    var osVersion: String = "",
+    var osVersion: String? = null,
     /**
      * operating system revision number
      *
@@ -37,7 +37,7 @@ data class Hardware(
      */
     @Deprecated("Use InventoryResult.OperatingSystem#name an InventoryResult.OperatingSystem#fullName instead")
     @PropertyElement(name = "OSNAME", writeAsCData = true)
-    var osName: String = "",
+    var osName: String? = null,
     /**
      * OS checksum
      */
@@ -71,7 +71,7 @@ data class Hardware(
      * swap memory in MB
      */
     @PropertyElement(name = "SWAP", writeAsCData = true)
-    var swap: Int = 0,
+    var swap: Int? = null,
     /**
      * Total system memory in MB
      */
@@ -155,7 +155,7 @@ data class Hardware(
      * virtual machine name the hypervisor (VM only)
      */
     @PropertyElement(name = "VMNAME", writeAsCData = true)
-    var VM_NAME: String? = null,
+    var vmName: String? = null,
     @PropertyElement(name = "WINOWNER", writeAsCData = true)
     var winOwner: String? = null,
     @PropertyElement(name = "WINPRODID", writeAsCData = true)
