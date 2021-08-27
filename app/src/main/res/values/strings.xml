@@ -10,16 +10,6 @@
     <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
     <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>
 
-    <string name="category_accessibility">Accessibility</string>
-    <string name="category_audio">Audio</string>
-    <string name="category_game">Game</string>
-    <string name="category_image">Imaging</string>
-    <string name="category_maps">Maps</string>
-    <string name="category_news">News</string>
-    <string name="category_productivity">Productivity</string>
-    <string name="category_social">Social</string>
-    <string name="category_undefined">Undefined</string>
-
     <string-array name="camera_vendors">
         <item>ov|OmniVision</item>
         <item>imx|Sony</item>
