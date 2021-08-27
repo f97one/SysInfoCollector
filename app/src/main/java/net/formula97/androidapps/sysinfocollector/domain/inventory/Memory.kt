@@ -17,7 +17,7 @@ data class Memory(
      * See Win32_PhysicalMemory documentation
      */
     @PropertyElement(name = "FORMFACTOR", writeAsCData = true)
-    var FORM_FACTOR: String? = null,
+    var formFactor: String? = null,
     @PropertyElement(name = "REMOVABLE", writeAsCData = true, converter = BoolToIntConverter::class)
     var removable: Boolean = false,
     /**
@@ -45,7 +45,7 @@ data class Memory(
     @PropertyElement(name = "DESCRIPTION", writeAsCData = true)
     var description: String? = null,
     @PropertyElement(name = "NUMSLOTS", writeAsCData = true)
-    var NUM_SLOTS: Int? = null,
+    var numSlots: Int? = null,
     @PropertyElement(name = "MEMORYCORRECTION", writeAsCData = true)
     var memoryCorrection: String? = null,
     @PropertyElement(name = "MANUFACTURER", writeAsCData = true)
