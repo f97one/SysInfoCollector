@@ -45,4 +45,4 @@ data class UsbDevice(
      */
     @PropertyElement(name = "NAME", writeAsCData = true)
     var name: String = "",
-)
+): InventoryCategory

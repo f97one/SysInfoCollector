@@ -12,4 +12,4 @@ data class User(
      */
     @PropertyElement(name = "DOMAIN", writeAsCData = true)
     var domain: String? = null
-)
+): InventoryCategory
