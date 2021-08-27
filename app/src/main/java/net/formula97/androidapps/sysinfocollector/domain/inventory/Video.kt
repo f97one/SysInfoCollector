@@ -24,4 +24,4 @@ data class Video(
      */
     @PropertyElement(name = "PCISLOT", writeAsCData = true)
     var pciSlot: String? = null
-)
+): InventoryCategory
