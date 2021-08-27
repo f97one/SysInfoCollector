@@ -39,7 +39,7 @@ data class UsbDevice(
      * device USB subclass ID
      */
     @PropertyElement(name = "SUBCLASS", writeAsCData = true)
-    var subSubClass: String? = null,
+    var usbSubClass: String? = null,
     /**
      * device name
      */
