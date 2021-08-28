@@ -97,4 +97,8 @@ dependencies {
     // Apache Commons Codec
     def commonsCodecVersion = "1.15"
     implementation("commons-codec:commons-codec:$commonsCodecVersion")
+
+    // Apache Commons-net
+    def commonsNetVersion = "3.8.0"
+    implementation("commons-net:commons-net:$commonsNetVersion")
 }
