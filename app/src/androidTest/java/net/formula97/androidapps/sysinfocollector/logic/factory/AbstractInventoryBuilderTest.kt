@@ -1,7 +1,9 @@
 package net.formula97.androidapps.sysinfocollector.logic.factory
 
+import android.os.Build
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
+import net.formula97.androidapps.sysinfocollector.domain.AndroidVersion
 import org.junit.Assert.*
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -85,5 +87,21 @@ class AbstractInventoryBuilderTest {
         assertEquals("Mongoose", families.filter { it.vId == 0x53 && it.id == 0x1 }.get(index = 0).name)
         assertEquals("Mongoose-M3", families.filter { it.vId == 0x53 && it.id == 0x2 }.get(index = 0).name)
         assertEquals("Intel", families.filter { it.vId == 0x69 && it.id == 0x1 }.get(index = 0).name)
+    }
+
+    @Test
+    fun createsAndroidVersionNames() {
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        val versions = CameraFactory().loadAndroidVersions(context)
+
+        assertEquals(AndroidVersion(31, "Android12", "12"), versions.first { it.apiLevel == Build.VERSION_CODES.S })
+        assertEquals(AndroidVersion(30, "Android11", "11"), versions.first { it.apiLevel == Build.VERSION_CODES.R })
+        assertEquals(AndroidVersion(29, "Android10", "10"), versions.first { it.apiLevel == Build.VERSION_CODES.Q })
+        assertEquals(AndroidVersion(28, "Pie", "9"), versions.first { it.apiLevel == Build.VERSION_CODES.P })
+        assertEquals(AndroidVersion(27, "Oreo MR1", "8.1.0"), versions.first { it.apiLevel == Build.VERSION_CODES.O_MR1 })
+        assertEquals(AndroidVersion(26, "Oreo", "8.0.0"), versions.first { it.apiLevel == Build.VERSION_CODES.O })
+        assertEquals(AndroidVersion(25, "Nougat MR1", "7.1.0"), versions.first { it.apiLevel == Build.VERSION_CODES.N_MR1 })
+        assertEquals(AndroidVersion(24, "Nougat", "7.0.0"), versions.first { it.apiLevel == Build.VERSION_CODES.N })
+        assertEquals(AndroidVersion(23, "Marshmallow", "6.0"), versions.first { it.apiLevel == Build.VERSION_CODES.M })
     }
 }

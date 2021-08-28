@@ -2,6 +2,7 @@ package net.formula97.androidapps.sysinfocollector.logic.factory
 
 import android.content.Context
 import net.formula97.androidapps.sysinfocollector.R
+import net.formula97.androidapps.sysinfocollector.domain.AndroidVersion
 import net.formula97.androidapps.sysinfocollector.domain.CpuFamily
 import timber.log.Timber
 import java.io.*
@@ -85,5 +86,17 @@ abstract class AbstractInventoryBuilder<T> {
 
     private fun removeBracket(token: String): String {
         return token.replace("\\[", "").replace("]", "")
+    }
+
+    fun loadAndroidVersions(context: Context): List<AndroidVersion> {
+        val versionsArray = context.resources.getStringArray(R.array.android_version_names)
+
+        val ret = mutableListOf<AndroidVersion>()
+        versionsArray.forEach {
+            val t = it.split("|", limit = 0)
+            ret.add(AndroidVersion(t[0].toInt(), t[1], t[2]))
+        }
+
+        return ret
     }
 }
